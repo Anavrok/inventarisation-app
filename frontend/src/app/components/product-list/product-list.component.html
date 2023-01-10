@@ -1,0 +1,30 @@
+<div class="container">
+  <div  class="d-flex justify-content-between flex-wrap flex-mdnowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+      <h2 class="">Product list</h2>
+  </div>
+
+  <table class="table-responsive">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nazwa</th>
+        <th scope="col">Producent</th>
+        <th scope="col">Kategoria</th>
+        <th scope="col">Akcja</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of Products; let i = index">
+        <th scope="row">{{product.id}}</th>
+        <td>{{product.name}}</td>
+        <td>{{product.manufacturer}}</td>
+        <td>{{product.category}}</td>
+        <td>
+          <button type="button" class="btn btn-danger" (click)="delete(product.id,i)">Delete</button>
+          <button type="button" class="btn btn-success" routerLink="/edit-product/{{product.id}}">Edit</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
